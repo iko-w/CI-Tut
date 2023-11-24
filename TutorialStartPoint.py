@@ -13,6 +13,10 @@ def RunGitCommand():
 	statusResult = subprocess.run(['git', 'status'], capture_output=True, check=True)
 	print(statusResult.stdout.decode("ascii"))
 
+	# # cleaning git repo
+	cleanResult = subprocess.run(["git", "clean"], capture_output=True, check=True)
+	print(cleanResult.stdout.decode("ascii"))
+
 	# # pulling git repo
 	pullResult = subprocess.run(["git", "pull"], capture_output=True, check=True)
 	print(pullResult.stdout.decode("ascii"))
